@@ -35,7 +35,6 @@ class RWParser:
         while(1):
             anchor_tag_loc = relevant.find(anchor_tag,i)
             if anchor_tag_loc == -1:
-                print "Reached the end of links, exiting..."
                 break
             end_anchor_tag_loc = relevant.find('">',anchor_tag_loc)
             end_name = relevant.find('</a>',end_anchor_tag_loc)
@@ -57,10 +56,14 @@ class RWParser:
         return self.restaurants        
 
 def main():
+    #get_contents_from web will automatically pickle.
     RW = RWParser()
-    RW.get_pickled_contents()
+    #comment this next line if the script has been run before
+    RW.get_contents_from_web()
+    #uncomment next line if the script has been run before
+    #RW.get_pickled_contents()
     RW.get_restaurant_info()
-    print RW.restaurants
+    print ("Relevant information found, and loaded into RWdata.p")
     pickle.dump(RW.restaurants, open("RWdata.p", "wb"))
 
 if __name__ == '__main__':
