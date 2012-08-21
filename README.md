@@ -13,10 +13,10 @@ actually corresponds to the correct yelp page and rating for that restaurant.
 
 The sequence of commands to create the csv is as follows:
 
-python restaurantweekparser.py
-
-python parsemulti.py
-
-python manipyelpdict.py
+    $ python restaurantweekparser.py
+    
+    $ python parsemulti.py
+    
+    $ python manipyelpdict.py
 
 This will create a .csv file with restaurant information and yelp scores.
